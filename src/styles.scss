@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'variables';
+
+html,
+body {
+  padding: 0 16px;
+  background-color: $paleBlue !important;
+}
+
+nav.navbar {
+  background-color: red;
+}
+
+.no-padding {
+  padding: 0 !important;
+}

@@ -1,0 +1,17 @@
+@import 'variables';
+.home {
+  section {
+    border-radius: 10px;
+    padding: 16px;
+    margin: 8px;
+    background-color: $notWhite;
+    height: fit-content;
+  }
+  .chartContainer {
+    height: 50vh;
+  }
+  .alignView {
+    justify-content: space-around;
+    align-items: center;
+  }
+}
