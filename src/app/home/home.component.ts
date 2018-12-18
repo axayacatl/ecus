@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
 
   getData(start_date = undefined, end_date = undefined) {
     this.values = [];
-    this._currencyService.getDateRange(start_date, end_date).subscribe(data => {
+    this._currencyService.getDateRange(start_date, end_date).subscribe((data: any) => {
       console.log(data.results.USD_MXN.val);
       let dd = data.results.USD_MXN.val;
       for(let date in dd) {
