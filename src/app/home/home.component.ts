@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   public chart: any;
   public start_date: any;
   public end_date: any;
+  public day_diff: any;
   public values: any[] = [];
 
   constructor(private _currencyService: CurrencyService) { }
@@ -39,6 +40,8 @@ export class HomeComponent implements OnInit {
     let start_date = moment(this.start_date).format("YYYY-MM-DD");
     let end_date = moment(this.end_date).format("YYYY-MM-DD");
 
+    this.day_diff = new Date(this.end_date - this.start_date).getDate();
+
     if(moment(this.end_date).subtract(7,'days') > this.start_date){
       alert('Solo es posible consultar un rango de 8 días');
       return;
@@ -53,7 +56,7 @@ export class HomeComponent implements OnInit {
         type: 'area'
       },
       title: {
-        text: 'Linechart'
+        text: 'Tipo de cambio - USD a MXN'
       },
       credits: {
         enabled: false

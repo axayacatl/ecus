@@ -16,9 +16,8 @@
   <section class="col-8 chartContainer" [chart]="chart"></section>
   <article class="col no-padding">
     <section class="d-flex flex-wrap alignView">
-      <div class="img">8</div>
       <div class="data d-flex flex-column">
-        <label>8</label>
+	<label>{{ day_diff + 1 || 8 }}</label>
         <label class="small">días</label>
       </div>
     </section>
