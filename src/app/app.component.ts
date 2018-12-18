@@ -1,11 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
+import { CurrencyService } from './services/currency.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  constructor(private _currencyService: CurrencyService) { }
+
+  ngOnInit(){
+    this.getData();
+  }
+ 
   title = 'ecus';
 
   chart = new Chart({
@@ -25,4 +34,10 @@ export class AppComponent {
       }
     ]
   });
+
+  getData(){
+    this._currencyService.getDateRange().subscribe(data => {
+      console.log(data);
+    });
+  }
 }
