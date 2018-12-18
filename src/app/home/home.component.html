@@ -1,6 +1,17 @@
 <article class="home d-flex flex-wrap">
   <section class="col">
     <button class="btn btn-block">Inicio</button>
+    <article class="mt-3 d-flex flex-wrap alignView">
+      <span>Fecha inicial</span>
+      <div class="data d-flex flex-column">
+	<material-datepicker [(date)]="start_date"></material-datepicker>
+      </div>
+      <span>Fecha final</span>
+      <div class="data d-flex flex-column">
+	<material-datepicker [(date)]="end_date"></material-datepicker>
+      </div>
+      <div class="mt-2 btn btn-block btn-primary" (click)="setDates()">Ir</div>
+    </article>
   </section>
   <section class="col-8 chartContainer" [chart]="chart"></section>
   <article class="col no-padding">
@@ -11,10 +22,6 @@
         <label class="small">días</label>
       </div>
     </section>
-    <div class="btn btn-block">Img with data</div>
   </article>
-  
-  <material-datepicker [(date)]="end_date"></material-datepicker>
-  
 </article>
 
